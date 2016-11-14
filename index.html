@@ -1,0 +1,136 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"  content="telephone=no">
+    <meta name="viewport"  content="email=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>好友帮忙助力 我要免费回家</title>
+    <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link href="css/main.css" type="text/css" rel="stylesheet">
+    <link href="css/buttons.css" type="text/css" rel="stylesheet">
+    <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="js/countdown.js" type="text/javascript"></script>
+    <script src="js/main.js" type="text/javascript"></script>
+</head>
+<body>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">我要参加</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-2 control-label">姓名</label>
+                        <div class="col-sm-10">
+                            <input type="email" class="form-control" id="inputEmail3" placeholder="name">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPassword3" class="col-sm-2 control-label">电话</label>
+                        <div class="col-sm-10">
+                            <input type="password" class="form-control" id="inputPassword3" placeholder="tel">
+                        </div>
+                    </div>
+                    <p>
+                        活动规则：
+                        关注兴途微信公众号，添加姓名及电话即可参加活动，截止至7月20日24时，获得好友助力最多的前100人即可获得天兴客运提供的由沈阳发往以下各地的单程车票一张，活动结束后，将通过兴途官方微信公布获奖名单，免费车票有效期截止至2016年10月7日。
+
+                    </p>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-primary">提交</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="page1">
+                <div class="h5top">
+                    <img src="images/img1.jpg">
+                </div>
+            <div id="CountMsg" class="HotDate djs">
+            <h4>距活动结束还有：
+                <span id="t_d">00天</span>
+                <span id="t_h">00时</span>
+                <span id="t_m">00分</span>
+                <span id="t_s">00秒</span>
+            </h4>
+            </div>
+        <div class="txt1">
+            <p>亲爱的朋友</p>
+            <p>&nbsp;&nbsp;我是**，现在已经有N个好友为我的免费乘车助力成功啦，
+                距离免费车票到手仅剩一步之遥！
+                快快赐予我力量吧！如果你愿意，
+                请把页面转发给更多好友帮我助力，万分感激哦！<br/>
+            </p>
+        </div>
+        <div class="btn1">
+            <button type="button" class="btn btn-primary" onclick="help()">帮他助力</button>
+            <button type="button" class="btn btn-primary" onclick="showShareBox()">请好友帮他助力</button>
+            <button type="button" class="btn btn-primary" onclick="aa()" data-toggle="modal" data-target="#myModal">我要参加</button>
+        </div>
+        <div class="sharebox" id="sharebox" onclick="closeSharebox()">
+            <img src="images/share.png">
+        </div>
+        <div class="rank">
+            <h3>好友榜</h3>
+            <marquee direction="up" style="text-align: center;">
+            <p>您的好友“<span>微信名</span>”已经为你成功助力</p>
+            <p>您的好友“<span>微信名</span>”已经为你成功助力</p>
+            <p>您的好友“<span>微信名</span>”已经为你成功助力</p>
+            <p>您的好友“<span>微信名</span>”已经为你成功助力</p>
+                <p>您的好友“<span>微信名</span>”已经为你成功助力</p>
+                <p>您的好友“<span>微信名</span>”已经为你成功助力</p>
+                <p>您的好友“<span>微信名</span>”已经为你成功助力</p>
+                <p>您的好友“<span>微信名</span>”已经为你成功助力</p>
+                <p>您的好友“<span>微信名</span>”已经为你成功助力</p>
+                <p>您的好友“<span>微信名</span>”已经为你成功助力</p>
+            </marquee>
+        </div>
+        <div class="detail">
+            <h3>活动详情</h3>
+            <p>关注“兴途”微信公众号，添加姓名及电话即可参加活动，截止至7月20日24时，
+                获得好友助力最多的前100人即可获得天兴客运提供的由沈阳发往以下各地的单程车票一张，
+                活动结束后，将通过兴途官方微信公布获奖名单，免费车票有效期截止至2016年10月7日。
+            </p>
+        </div>
+        <div class="destination">
+            <img src="images/img2.jpg">
+        </div>
+        <div class="powrank">
+            <h3>助力排行榜</h3>
+            <p>您目前的好友助力数量位列排行榜第<span>n</span>位！</p>
+            <marquee direction="up">
+                <p>排名：<span>n</span>&nbsp;姓名：<span>n</span>&nbsp;助力数量：<span>n</span></p>
+                <p>排名：<span>n</span>&nbsp;姓名：<span>n</span>&nbsp;助力数量：<span>n</span></p>
+                <p>排名：<span>n</span>&nbsp;姓名：<span>n</span>&nbsp;助力数量：<span>n</span></p>
+                <p>排名：<span>n</span>&nbsp;姓名：<span>n</span>&nbsp;助力数量：<span>n</span></p>
+                <p>排名：<span>n</span>&nbsp;姓名：<span>n</span>&nbsp;助力数量：<span>n</span></p>
+                <p>排名：<span>n</span>&nbsp;姓名：<span>n</span>&nbsp;助力数量：<span>n</span></p>
+                <p>排名：<span>n</span>&nbsp;姓名：<span>n</span>&nbsp;助力数量：<span>n</span></p>
+                <p>排名：<span>n</span>&nbsp;姓名：<span>n</span>&nbsp;助力数量：<span>n</span></p>
+                <p>排名：<span>n</span>&nbsp;姓名：<span>n</span>&nbsp;助力数量：<span>n</span></p>
+                <p>排名：<span>n</span>&nbsp;姓名：<span>n</span>&nbsp;助力数量：<span>n</span></p>
+            </marquee>
+        </div>
+        <div class="copyright">
+            <p>本活动最终解释权归沈阳市天兴客运有限公司所有</p>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+<script>
+    function aa(){
+        alert("11");
+    }
+</script>
